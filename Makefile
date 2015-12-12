@@ -8,6 +8,8 @@ slic3r:
 
 printrun:
 	@echo "(*) Starting Printrun..."
-	./printrun/pronterface.py --verbose --config config/printrun.conf
+	@touch config/printrun.user~
+	./printrun/pronterface.py --verbose \
+		--config config/printrun.conf --config config/printrun.user~
 
 .PHONY: slic3r printrun
